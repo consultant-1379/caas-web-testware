@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TORF-10614_Functional">
+	<test name="TORF-10614_Functional">
+		<classes>
+			<class name="com.ericsson.sut.test.cases.CaasWeb_FunctionalTest" />
+		</classes>
+	</test>
+</suite>

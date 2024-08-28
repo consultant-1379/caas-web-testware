@@ -1,0 +1,2 @@
+host,url,configFileLocationOnServer,clientCrt,clientPrivateKey,aaqRequestParams,result,responseSyntax
+localhost,https://127.0.0.1:50142/ericsson/servlet/AAService,/ericsson/tor/data/autointegration/files/,/ericsson/tor/data/autointegration/files/tmp/caasweb_client_cert.crt,/ericsson/tor/data/autointegration/files/tmp/caasweb_client_cert.priv,"userID=testuser&queryType=1.3.6.1.4.1.193.140.1.1&aaqVersion=0&sessionID=347&authMethod=1.3.6.1.4.1.193.140.1.4&authenticator=secret",true,"the syntax of the response to do"

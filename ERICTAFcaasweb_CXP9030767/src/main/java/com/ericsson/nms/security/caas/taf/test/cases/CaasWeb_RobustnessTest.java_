@@ -1,0 +1,101 @@
+package com.ericsson.nms.security.caas.taf.test.cases;
+
+import com.ericsson.cifwk.taf.TestCase;
+import com.ericsson.cifwk.taf.TorTestCaseHelper;
+import com.ericsson.cifwk.taf.annotations.Context;
+import com.ericsson.cifwk.taf.annotations.DataDriven;
+import com.ericsson.cifwk.taf.annotations.Input;
+import com.ericsson.cifwk.taf.annotations.Output;
+import com.ericsson.cifwk.taf.annotations.TestId;
+import com.ericsson.cifwk.taf.exceptions.TestCaseNotImplementedException;
+import com.ericsson.cifwk.taf.guice.OperatorRegistry;
+import com.ericsson.nms.security.caas.taf.test.operators.CaasWebOperator;
+import com.ericsson.sut.test.getters.CaasWebGetter;
+import javax.inject.Inject;
+import org.testng.annotations.Test;
+
+public class CaasWeb_RobustnessTest extends TorTestCaseHelper implements TestCase {
+
+    @Inject
+    private OperatorRegistry<CaasWebOperator> caasWebProvider;
+
+    @Inject
+    private CaasWebGetter caasWebGetter;
+
+    @TestId(id = "datadriven", title = "DataDriven Example")
+    @Test
+    @DataDriven(name = "caasweb_robustnesstest")
+    public void shouldBePopulatedFromCsv(@Input("first") int x, @Input("second") int y, @Output("result") int expected) {
+        assertEquals(x + y, expected);
+    }
+
+    /**
+     * @DESCRIPTION Test case to evaluate the point at wich Caas-web component
+     * will not be able to serve requests within 2 seconds.
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Robu_1", title = "TORF-10614_Perf_11: Test at how many requests(send at rate of request 50 requests per second) the overall CAAS system can handle before responses are longer than 2 seconds or system falls over.")
+    @Context(context = {Context.REST, Context.API})
+    @Test(groups = {"{Acceptance", "caas-web_regression}"})
+    public void tORF10614_Perf_11TestAtHowManyRequestsSendAtRateOfRequest50RequestsPerSecondTheOverallCAASSystemCanHandleBeforeResponsesAreLongerThan2SecondsOrSystemFallsOver() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate");
+        //TODO VERIFY:Verify AAQ response string is returned code 200 OK.
+        throw new TestCaseNotImplementedException();
+    }
+
+    /**
+     * @DESCRIPTION Test case to evaluate the stability of Caas-web component
+     * for long period of time.
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Robu_2", title = "TORF-10614_Perf_12: Test for sending requests for 6 hours at 10 requests per sec. Monitoring the system through DDC and hyperic and see that the response times haven’t degraded and that there are no memory leaks.")
+    @Context(context = {Context.REST, Context.API})
+    @Test(groups = {"{Acceptance", "caas-web_regression}"})
+    public void tORF10614_Perf_12TestForSendingRequestsFor6HoursAt10RequestsPerSecMonitoringTheSystemThroughDDCAndHypericAndSeeThatTheResponseTimesHavenTDegradedAndThatThereAreNoMemoryLeaks() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate");
+        //TODO VERIFY:Verify AAQ response string is returned code 200 OK.
+        throw new TestCaseNotImplementedException();
+    }
+
+    /**
+     * @DESCRIPTION Test case to verify the responce syntax after a simulated
+     * https request from NetSim towards the stability of Caas-web component
+     * @PRE Application Server is running with REST and SSL certificates. NetSim
+     * is rnning and configured.
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Robu_3", title = "TORF-10614_Perf_13: Verify AAQ request from NE with invalid userID. Note: currently userIDs do not exist and CAAS is agnostic of validity of userIDs. Will use a hardcoded userID for testing purposes only) (50% valid certs 50% invalid certs")
+    @Context(context = {Context.REST, Context.API})
+    @Test(groups = {"{Acceptance", "caas-web_regression}"})
+    public void tORF10614_Perf_13VerifyAAQRequestFromNEWithInvalidUserIDNoteCurrentlyUserIDsDoNotExistAndCAASIsAgnosticOfValidityOfUserIDsWillUseAHardcodedUserIDForTestingPurposesOnly50ValidCerts50InvalidCerts() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate");
+        //TODO VERIFY:Verify AAQ response string is returned code 200 OK with correct syntax.
+        throw new TestCaseNotImplementedException();
+    }
+
+    /**
+     * @DESCRIPTION Test case to verify the responce syntax after a simulated
+     * https request from NetSim towards the stability of Caas-web component
+     * @PRE Application Server is running with REST and SSL certificates. NetSim
+     * is running and configured.
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Robu_4", title = "TORF-10614_Perf_14: Verify aaq request from NE with invalid password (password expired/ locked account)")
+    @Context(context = {Context.REST, Context.API})
+    @Test(groups = {"{Acceptance", "caas-web_regression}"})
+    public void tORF10614_Perf_14VerifyAaqRequestFromNEWithInvalidPasswordPasswordExpiredLockedAccount() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate");
+        //TODO VERIFY:Verify AAQ response string is returned code 200 OK with correct syntax.
+        throw new TestCaseNotImplementedException();
+    }
+}

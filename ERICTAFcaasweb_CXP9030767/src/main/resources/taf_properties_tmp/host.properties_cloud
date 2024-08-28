@@ -1,0 +1,56 @@
+#To switch between the cloud and multinode deployment 
+#replace this file whith one of the files located in the 
+#taf_properties_tmp folder
+
+#This parameter is used by TafHosts class to determine the deployment type
+deployment.type=cloud
+
+#Gateway
+host.gateway.ip = 10.45.200.44
+host.gateway.user.root.pass = shroot
+host.gateway.user.root.type = ADMIN
+host.gateway.port.ssh=22
+
+#tunnelling to sc1 which is behind the gateway
+host.gateway.node.sc1.tunnel = 1
+host.gateway.node.sc1.type = SC1
+host.gateway.node.sc1.ip = 192.168.0.43
+host.gateway.node.sc1.port.ssh=22
+host.gateway.node.sc1.port.http = 8080
+host.gateway.node.sc1.port.jmx = 9999
+host.gateway.node.sc1.port.rmi=4447
+host.gateway.node.sc1.user.root.pass=litpc0b6lEr
+host.gateway.node.sc1.user.root.type=ADMIN
+
+#tunnelling to SecurityServer1 which is behind the gateway
+host.gateway.node.secServ1.tunnel = 2
+host.gateway.node.secServ1.type = jboss
+host.gateway.node.secServ1.ip = 192.168.0.92
+host.gateway.node.secServ1.port.ssh=22
+host.gateway.node.secServ1.port.http = 8080
+host.gateway.node.secServ1.port.rmi = 4447
+host.gateway.node.secServ1.port.jmx = 9999
+host.gateway.node.secServ1.user.guest.pass=guestp
+host.gateway.node.secServ1.user.guest.type=OPER
+
+#tunnelling to sc2 which is behind the gateway
+host.gateway.node.sc2.tunnel = 3
+host.gateway.node.sc2.type = SC2
+host.gateway.node.sc2.ip = 192.168.0.44
+host.gateway.node.sc2.port.ssh=22
+host.gateway.node.sc2.port.http = 8080
+host.gateway.node.sc2.port.jmx = 9999
+host.gateway.node.sc2.port.rmi=4447
+host.gateway.node.sc2.user.root.pass=litpc0b6lEr
+host.gateway.node.sc2.user.root.type=ADMIN
+
+#tunnelling to SecurityServer2 which is behind the gateway
+host.gateway.node.secServ2.tunnel = 4
+host.gateway.node.secServ2.type = jboss
+host.gateway.node.secServ2.ip = 192.168.0.93
+host.gateway.node.secServ2.port.ssh=22
+host.gateway.node.secServ2.port.http = 8080
+host.gateway.node.secServ2.port.rmi = 4447
+host.gateway.node.secServ2.port.jmx = 9999
+host.gateway.node.secServ2.user.guest.pass=guestp
+host.gateway.node.secServ2.user.guest.type=OPER

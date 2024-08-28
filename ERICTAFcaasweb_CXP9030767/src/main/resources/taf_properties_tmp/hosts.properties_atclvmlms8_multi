@@ -1,0 +1,37 @@
+host.sc1.type=SC1
+host.sc1.ip=10.32.226.96
+host.sc1.port.http=8080
+host.sc1.port.rmi=4447
+host.sc1.port.ssh=22
+host.sc1.user.root.type = root
+host.sc1.user.root.pass=litpc0b6lEr
+ 
+host.secServ1.type = jboss
+host.secServ1.ip = 10.32.226.97
+host.secServ1.port.http = 8080
+host.secServ1.port.rmi = 4447
+host.secServ1.port.jmx = 9999
+host.secServ1.port.ssh=22
+host.secServ1.user.root.type = root
+host.secServ1.user.root.pass=litpc0b6lEr
+#host.secServ1.user.guest.pass=guestp
+#host.secServ1.user.guest.type=OPER
+ 
+host.sc2.type=SC2
+host.sc2.ip=10.32.227.195
+host.sc2.port.http=8080
+host.sc2.port.rmi=4447
+host.sc2.port.ssh=22
+host.sc2.user.root.type = root
+host.sc2.user.root.pass=litpc0b6lEr
+ 
+host.secServ2.type = jboss
+host.secServ2.ip = 10.32.227.196
+host.secServ2.port.http = 8080
+host.secServ2.port.rmi = 4447
+host.secServ2.port.jmx = 9999
+host.secServ2.port.ssh=22
+host.secServ2.user.root.type = root
+host.secServ2.user.root.pass=litpc0b6lEr
+#host.secServ2.user.guest.pass=guestp
+#host.secServ2.user.guest.type=OPER

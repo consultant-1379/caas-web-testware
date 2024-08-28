@@ -1,0 +1,49 @@
+host.sc1.type=SC1
+#attorlms2
+#host.sc1.ip=10.59.142.48
+#attorlms1
+host.sc1.ip=10.59.142.40
+host.sc1.port.http=8080
+host.sc1.port.rmi=4447
+host.sc1.port.ssh=22
+host.sc1.user.root.type = root
+host.sc1.user.root.pass=litpc0b6lEr
+ 
+host.sc1jbi.type = jboss
+#attorlms2 CMServ IP
+#host.sc1jbi.ip = 10.59.142.58
+#attorlms1 CMServ IP
+host.sc1jbi.ip = 10.59.142.28
+host.sc1jbi.port.http = 8080
+host.sc1jbi.port.rmi = 4447
+host.sc1jbi.port.jmx = 9999
+host.sc1jbi.port.ssh=22
+host.sc1jbi.user.root.type = root
+host.sc1jbi.user.root.pass=litpc0b6lEr
+#host.sc1jbi.user.guest.pass=guestp
+#host.sc1jbi.user.guest.type=OPER
+ 
+host.sc2.type=SC2
+#attorlms2
+#host.sc2.ip=10.59.142.100
+#attorlms1
+host.sc2.ip=10.59.142.99
+host.sc2.port.http=8080
+host.sc2.port.rmi=4447
+host.sc2.port.ssh=22
+host.sc2.user.root.type = root
+host.sc2.user.root.pass=litpc0b6lEr
+ 
+host.sc2jbi.type = jboss
+#attorlms2 CMServ IP
+#host.sc2jbi.ip = 10.59.142.59
+#attorlms1 CMServ IP
+host.sc1jbi.ip = 10.59.142.29
+host.sc2jbi.port.http = 8080
+host.sc2jbi.port.rmi = 4447
+host.sc2jbi.port.jmx = 9999
+host.sc2jbi.port.ssh=22
+host.sc2jbi.user.root.type = root
+host.sc2jbi.user.root.pass=litpc0b6lEr
+#host.sc2jbi.user.guest.pass=guestp
+#host.sc2jbi.user.guest.type=OPER

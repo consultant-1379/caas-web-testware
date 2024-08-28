@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CaasWeb_Functional">
+    <test name="CaasWeb_Functional">
+        <classes>
+            <class name="com.ericsson.nms.security.caas.taf.test.cases.CaasWeb_FunctionalTest" />             
+        </classes>
+    </test>
+</suite>

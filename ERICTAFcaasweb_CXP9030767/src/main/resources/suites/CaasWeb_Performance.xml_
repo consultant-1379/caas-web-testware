@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CaasWeb_Performance">
+	<test name="CaasWeb_Performance">
+		<classes>
+			<class name="com.ericsson.sut.test.cases.CaasWeb_PerformanceTest" />
+		</classes>
+	</test>
+</suite>

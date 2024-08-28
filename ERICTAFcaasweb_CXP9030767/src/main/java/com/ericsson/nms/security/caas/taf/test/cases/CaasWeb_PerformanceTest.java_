@@ -1,0 +1,93 @@
+package com.ericsson.nms.security.caas.taf.test.operators;
+
+import com.ericsson.cifwk.taf.TestCase;
+import com.ericsson.cifwk.taf.TorTestCaseHelper;
+import com.ericsson.cifwk.taf.annotations.Context;
+import com.ericsson.cifwk.taf.annotations.DataDriven;
+import com.ericsson.cifwk.taf.annotations.Input;
+import com.ericsson.cifwk.taf.annotations.Output;
+import com.ericsson.cifwk.taf.annotations.TestId;
+import com.ericsson.cifwk.taf.exceptions.TestCaseNotImplementedException;
+import com.ericsson.cifwk.taf.guice.OperatorRegistry;
+import com.ericsson.sut.test.getters.CaasWebGetter;
+import javax.inject.Inject;
+import org.testng.annotations.Test;
+
+public class CaasWeb_PerformanceTest extends TorTestCaseHelper implements TestCase {
+
+    @Inject
+    private OperatorRegistry<CaasWebOperator> caasWebProvider;
+
+    @Inject
+    private CaasWebGetter caasWebGetter;
+
+    @TestId(id = "datadriven", title = "DataDriven Example")
+    @Test
+    @DataDriven(name = "caasweb_performancetest")
+    public void shouldBePopulatedFromCsv(@Input("first") int x, @Input("second") int y, @Output("result") int expected) {
+          assertEquals(x + y, expected);
+    }
+
+
+    /**
+     * @DESCRIPTION Test case if Caas-web component will perform under mixed requests with valid and invalid certificates. (generate 15000 NE requests at rate of 50 Authentication or Authorization requests per sec)
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Perf_1", title = "TORF-10614_Perf_7: Test mixed requests with valid and invalid client certificate.")
+    @Context(context = {Context.REST,Context.API})
+    @Test(groups={"{Acceptance","caas-web_regression}"})
+    public void tORF10614_Perf_7TestMixedRequestsWithValidAndInvalidClientCertificate() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with invalid and valid client certificate");
+        //TODO VERIFY:Verify AAQ response string is returned for each of the valid certificate requests and returns http code Unauthorized(401) for invalid certificates.
+        throw new TestCaseNotImplementedException();
+    }
+    /**
+     * @DESCRIPTION Test case if Caas-web component will perform under conccurent requests with valid certificates. (generate 15000 NE requests at rate of 50 Authentication or Authorization requests per sec)
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Perf_2", title = "TORF-10614_Perf_8: Test requests with valid client certificate only.")
+    @Context(context = {Context.REST,Context.API})
+    @Test(groups={"{Acceptance","caas-web_regression}"})
+    public void tORF10614_Perf_8TestRequestsWithValidClientCertificateOnly() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate.");
+        //TODO VERIFY:Verify AAQ response string is returned for each of the valid certificate requests.
+        throw new TestCaseNotImplementedException();
+    }
+    /**
+     * @DESCRIPTION Test case if Caas-web component will be able to satisfy all requet within the give time constraint. Accumulate the total time of execution for performance testing
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Perf_3", title = "TORF-10614_Perf_9: Test a burst of 160 requests processed within 3 seconds.")
+    @Context(context = {Context.REST,Context.API})
+    @Test(groups={"{Acceptance","caas-web_regression}"})
+    public void tORF10614_Perf_9TestABurstOf160RequestsProcessedWithin3Seconds() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate.");
+        //TODO VERIFY:Verify AAQ response string is returned for each of the valid certificate requests.
+        throw new TestCaseNotImplementedException();
+    }
+    /**
+     * @DESCRIPTION Test case if Caas-web component will be able to satisfy all concurrent requets.
+     * @PRE Application Server is running with REST and SSL certificates
+     * @PRIORITY HIGH
+     */
+    @TestId(id = "TORF-10614_Perf_4", title = "TORF-10614_Perf_10: Test concurrent valid requests with valid client certificates.")
+    @Context(context = {Context.REST,Context.API})
+    @Test(groups={"{Acceptance","caas-web_regression}"})
+    public void tORF10614_Perf_10TestConcurrentValidRequestsWithValidClientCertificates() {
+
+        CaasWebOperator caasWebOperator = caasWebProvider.provide(CaasWebOperator.class);
+        setTestInfo("Send a https post requests to the server with valid client certificate.");
+        //TODO VERIFY:Verify AAQ response string is returned for each of the valid certificate requests.
+        throw new TestCaseNotImplementedException();
+    }
+}
+	

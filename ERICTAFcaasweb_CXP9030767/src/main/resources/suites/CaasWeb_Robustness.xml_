@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="CaasWeb_Robustness">
+	<test name="CaasWeb_Robustness">
+		<classes>
+			<class name="com.ericsson.sut.test.cases.CaasWeb_RobustnessTest" />
+		</classes>
+	</test>
+</suite>
